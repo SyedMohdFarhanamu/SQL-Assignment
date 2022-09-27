@@ -1,3 +1,122 @@
-Ans:- The software used to store, manage, query, and retrieve data stored in a relational database is called a relational database management system (RDBMS). The RDBMS 
+Ans- 1 :- The software used to store, manage, query, and retrieve data stored in a relational database is called a relational database management system (RDBMS).The RDBMS 
 provides an interface between users and applications and the database, as well as administrative functions for managing data storage, access, and performance
-+ Advantage of RDBMS :-
+Advantage of RDBMS :- 1 Reducing Data Redundancy. The file based data management systems contained multiple files that were stored in many different locations in a 
+system or even across multiple systems. ...
+2 Sharing of Data.
+3 Data Integrity. 
+4 Data Security. 
+5 Privacy. 
+6 Backup and Recovery. 
+7 Data Consistency.
+
+Ans- 2 :- Atomicity:
+By this, we mean that either the entire transaction takes place at once or doesn’t happen at all. There is no midway i.e. transactions do not occur partially. Each 
+transaction is considered as one unit and either runs to completion or is not executed at all. It involves the following two operations. 
+—Abort: If a transaction aborts, changes made to the database are not visible. 
+—Commit: If a transaction commits, changes made are visible. 
+Atomicity is also known as the ‘All or nothing rule’. 
+
+Consistency:
+This means that integrity constraints must be maintained so that the database is consistent before and after the transaction. It refers to the correctness of a database. 
+Referring to the example above, The total amount before and after the transaction must be maintained.
+
+Isolation:
+This property ensures that multiple transactions can occur concurrently without leading to the inconsistency of the database state. Transactions occur independently 
+without interference. Changes occurring in a particular transaction will not be visible to any other transaction until that particular change in that transaction is 
+written to memory or has been committed. This property ensures that the execution of transactions concurrently will result in a state that is equivalent to a state 
+achieved these were executed serially in some order. 
+
+Durability: 
+This property ensures that once the transaction has completed execution, the updates and modifications to the database are stored in and written to disk and they 
+persist even if a system failure occurs. These updates now become permanent and are stored in non-volatile memory. The effects of the transaction, thus, are never lost.
+
+
+Ans- 3 :- A large database defined as a single relation may result in data duplication. This repetition of data may result in:
+
+* Making relations very large.
+* It isn't easy to maintain and update data as it would involve searching many records in relation.
+* Wastage and poor utilization of disk space and resources.
+* The likelihood of errors and inconsistencies increases.
+So to handle these problems, we should analyze and decompose the relations with redundant data into smaller, simpler, and well-structured relations that are satisfy 
+desirable properties. Normalization is a process of decomposing the relations into relations with fewer attributes.
+
+--> What is Normalization?
+Normalization is the process of organizing the data in the database.
+Normalization is used to minimize the redundancy from a relation or set of relations. It is also used to eliminate undesirable characteristics like Insertion, Update,
+and Deletion Anomalies.
+Normalization divides the larger table into smaller and links them using relationships.
+The normal form is used to reduce redundancy from the database table.
+--> Why do we need Normalization?
+
+The main reason for normalizing the relations is removing these anomalies. Failure to eliminate anomalies leads to data redundancy and can cause data integrity and
+other problems as the database grows. Normalization consists of a series of guidelines that helps to guide you in creating a good database structure.
+
+Ans- 4:- DDL (Data Definition Language): 
+DDL or Data Definition Language actually consists of the SQL commands that can be used to define the database schema. It simply deals with descriptions of the 
+database schema and is used to create and modify the structure of database objects in the database.DDL is a set of SQL commands used to create, modify, and delete 
+database structures but not data. These commands are normally not used by a general user, who should be accessing the database via an application.
+
+List of DDL commands: 
+
+CREATE: This command is used to create the database or its objects (like table, index, function, views, store procedure, and triggers).
+DROP: This command is used to delete objects from the database.
+ALTER: This is used to alter the structure of the database.
+TRUNCATE: This is used to remove all records from a table, including all spaces allocated for the records are removed.
+COMMENT: This is used to add comments to the data dictionary.
+RENAME: This is used to rename an object existing in the database.
+
+DQL (Data Query Language):
+DQL statements are used for performing queries on the data within schema objects. The purpose of the DQL Command is to get some schema relation based on the query 
+passed to it. We can define DQL as follows it is a component of SQL statement that allows getting data from the database and imposing order upon it. It includes the 
+SELECT statement. This command allows getting the data out of the database to perform operations with it. When a SELECT is fired against a table or tables the result 
+is compiled into a further temporary table, which is displayed or perhaps received by the program i.e. a front-end.
+
+List of DQL: 
+
+SELECT: It is used to retrieve data from the database.
+
+DML(Data Manipulation Language): 
+The SQL commands that deals with the manipulation of data present in the database belong to DML or Data Manipulation Language and this includes most of the SQL 
+statements. It is the component of the SQL statement that controls access to data and to the database. Basically, DCL statements are grouped with DML statements.
+
+List of DML commands: 
+
+INSERT : It is used to insert data into a table.
+UPDATE: It is used to update existing data within a table.
+DELETE : It is used to delete records from a database table.
+LOCK: Table control concurrency.
+CALL: Call a PL/SQL or JAVA subprogram.
+EXPLAIN PLAN: It describes the access path to data.
+
+DCL (Data Control Language): 
+DCL includes commands such as GRANT and REVOKE which mainly deal with the rights, permissions, and other controls of the database system. 
+
+List of  DCL commands: 
+
+GRANT: This command gives users access privileges to the database.
+REVOKE: This command withdraws the user’s access privileges given by using the GRANT command.
+
+Ans-5 :- While a primary key and a composite key might do the same things, the primary key will consist of one column, where the composite key will consist of two 
+or more columns.
+* Primary Key exp:
+CREATE TABLE emp(
+name varchar(20),
+id int,
+project varchar(20)
+);
+Composite Key exp
+CREATE TABLE voting (
+  QuestionID int,
+  MemberID int,
+  PRIMARY KEY (QuestionID, MemberID)
+);
+
+Ans- 6 :- CREATE TABLE emp(
+emp_name varchar(20),
+emp_id int,
+dept varchar(20),
+UNIQUE(emp_name)
+);
+
+
+
